@@ -1,0 +1,13 @@
+services:
+
+    #
+    # Services
+    #
+    elcodi.core.newsletter.service.newsletter_manager:
+        class: %elcodi.core.newsletter.service.newsletter_manager.class%
+        arguments:
+            newsletter_event_dispatcher: @elcodi.newsletter_event_dispatcher
+            validator: @validator
+            newsletter_subscription_factory: @elcodi.core.newsletter.factory.newsletter_subscription
+            newsletter_subscription_repository: @elcodi.core.newsletter.repository.newsletter_subscription
+            hash_generator: @elcodi.core.core.generator.sha1
